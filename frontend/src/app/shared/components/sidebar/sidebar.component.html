@@ -1,0 +1,46 @@
+<aside class="sidebar" [class.collapsed]="sidebarService.collapsed">
+  <div class="sidebar-header">
+    <div class="logo">
+      <div class="logo-icon">
+        <span>LM</span>
+      </div>
+      <div class="logo-text" *ngIf="!sidebarService.collapsed">LinkMetrik</div>
+    </div>
+  </div>
+
+  <div class="sidebar-menu">
+    <ul class="menu-list">
+      <li *ngFor="let item of menuItems" class="menu-item" [class.active]="isActive(item.route || '')" [class.has-submenu]="item.children?.length">
+        <a [routerLink]="item.route" *ngIf="!item.children?.length" class="menu-link">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" [innerHTML]="item.icon"></svg>
+          </span>
+          <span class="text" *ngIf="!sidebarService.collapsed">{{ item.label }}</span>
+        </a>
+
+        <div *ngIf="item.children?.length" class="menu-link" (click)="toggleSubmenu(item)" [class.expanded]="item.expanded">
+          <span class="icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" [innerHTML]="item.icon"></svg>
+          </span>
+          <span class="text" *ngIf="!sidebarService.collapsed">{{ item.label }}</span>
+          <span class="arrow" *ngIf="!sidebarService.collapsed">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="6 9 12 15 18 9"></polyline>
+            </svg>
+          </span>
+        </div>
+
+        <div class="submenu" *ngIf="item.children?.length && (item.expanded || sidebarService.collapsed)" [class.visible]="item.expanded || sidebarService.collapsed">
+          <ul>
+            <li *ngFor="let child of item.children" [class.active]="isActive(child.route || '')">
+              <a [routerLink]="child.route" class="submenu-link">
+                <span class="dot" *ngIf="!sidebarService.collapsed"></span>
+                <span class="text">{{ child.label }}</span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      </li>
+    </ul>
+  </div>
+</aside>

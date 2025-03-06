@@ -1,0 +1,17 @@
+<nav class="navbar">
+  <div class="logo">
+    <app-logo width="140" heigh="40"></app-logo>
+  </div>
+  <div class="nav-links">
+    <a routerLink="/">Início</a>
+    <a routerLink="/recursos">Recursos</a>
+    <a routerLink="/precos">Preços</a>
+    <a routerLink="/sobre">Sobre</a>
+    <a routerLink="/contato">Contato</a>
+  </div>
+
+  <div class="auth-buttons">
+    <button class="btn btn-outline" (click)="openLoginModal()">Login</button>
+    <button class="btn btn-primary" (click)="openSignupModal()">Criar Conta</button>
+  </div>
+</nav>

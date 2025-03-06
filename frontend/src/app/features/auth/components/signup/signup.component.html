@@ -1,0 +1,41 @@
+<div class="signup-form">
+  <form [formGroup]="signupForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="name">Nome completo</label>
+      <input type="text" id="name" formControlName="name" class="form-control">
+      <div class="error-message" *ngIf="signupForm.get('name')?.invalid && signupForm.get('name')?.touched">
+        Nome é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input type="email" id="email" formControlName="email" class="form-control">
+      <div class="error-message" *ngIf="signupForm.get('email')?.invalid && signupForm.get('email')?.touched">
+        E-mail válido é obrigatório
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input type="password" id="password" formControlName="password" class="form-control">
+      <div class="error-message" *ngIf="signupForm.get('password')?.invalid && signupForm.get('password')?.touched">
+        Senha é obrigatória
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="confirmPassword">Confirmar Senha</label>
+      <input type="password" id="confirmPassword" formControlName="confirmPassword" class="form-control">
+      <div class="error-message" *ngIf="signupForm.hasError('notSame') && signupForm.get('confirmPassword')?.touched">
+        As senhas não conferem
+      </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="signupForm.invalid">Criar Conta</button>
+
+    <div class="form-footer">
+      <p>Já tem uma conta? <a href="javascript:void(0)" (click)="switchToLogin()">Faça login</a></p>
+    </div>
+  </form>
+</div>

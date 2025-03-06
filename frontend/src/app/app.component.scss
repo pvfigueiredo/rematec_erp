@@ -1,0 +1,35 @@
+.app-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f8fafc;
+  transition: all 0.3s ease;
+
+  &.sidebar-collapsed {
+    .main-content {
+      margin-left: 80px; // Width of collapsed sidebar
+    }
+  }
+}
+
+.main-content {
+  flex: 1;
+  margin-left: 260px; // Width of expanded sidebar
+  transition: margin-left 0.3s ease;
+}
+
+.content-wrapper {
+  padding: 2rem;
+  min-height: calc(100vh - 70px); // Subtract header height
+}
+
+@media (max-width: 768px) {
+  .main-content {
+    margin-left: 0;
+  }
+
+  .app-container.sidebar-collapsed {
+    .main-content {
+      margin-left: 0;
+    }
+  }
+}

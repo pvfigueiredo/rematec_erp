@@ -1,0 +1,317 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\Projects\\SistemaLinkMetrikErp\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\models\\loginresponse.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\models\\loginrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\dtos\\userdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\data\\dbinitializer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\services\\tokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\services\\tokensettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\services\\tokensettings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\service.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\services\\iuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\services\\itokenservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\models\\createuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\models\\createuserrequest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|d:\\projects\\sistemalinkmetrikerp\\service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{B6325900-CD59-41DF-B73D-1EF716BBA8AC}|Service\\Service.csproj|solutionrelative:service\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 245,
+          "SelectedChildIndex": 18,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:129:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Service\\Properties\\launchSettings.json",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Service\\Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-04T20:22:55.939Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\appsettings.json",
+              "RelativeDocumentMoniker": "Service\\appsettings.json",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\appsettings.json",
+              "RelativeToolTip": "Service\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-03-04T20:21:19.346Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "DbInitializer.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Data\\DbInitializer.cs",
+              "RelativeDocumentMoniker": "Service\\Data\\DbInitializer.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Data\\DbInitializer.cs",
+              "RelativeToolTip": "Service\\Data\\DbInitializer.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T19:00:07.56Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Service\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Service\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:59:53.727Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "TokenSettings.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\TokenSettings.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\TokenSettings.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\TokenSettings.cs",
+              "RelativeToolTip": "Service\\Services\\TokenSettings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:47:54.87Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "TokenService.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\TokenService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\TokenService.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\TokenService.cs",
+              "RelativeToolTip": "Service\\Services\\TokenService.cs",
+              "ViewState": "AgIAABYAAAAAAAAAAAAgwAsAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:47:16.591Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "ITokenService.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\ITokenService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\ITokenService.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\ITokenService.cs",
+              "RelativeToolTip": "Service\\Services\\ITokenService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:47:11.985Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "UserDto.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Dtos\\UserDto.cs",
+              "RelativeDocumentMoniker": "Service\\Dtos\\UserDto.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Dtos\\UserDto.cs",
+              "RelativeToolTip": "Service\\Dtos\\UserDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:47:01.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "CreateUserRequest.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\CreateUserRequest.cs",
+              "RelativeDocumentMoniker": "Service\\Models\\CreateUserRequest.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\CreateUserRequest.cs",
+              "RelativeToolTip": "Service\\Models\\CreateUserRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:46:47.213Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "LoginResponse.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\LoginResponse.cs",
+              "RelativeDocumentMoniker": "Service\\Models\\LoginResponse.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\LoginResponse.cs",
+              "RelativeToolTip": "Service\\Models\\LoginResponse.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:46:14.496Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "User.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Service\\Models\\User.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\User.cs",
+              "RelativeToolTip": "Service\\Models\\User.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA1AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:45:44.901Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Service.csproj",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Service.csproj",
+              "RelativeDocumentMoniker": "Service\\Service.csproj",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Service.csproj",
+              "RelativeToolTip": "Service\\Service.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-03-04T18:37:38.36Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Program.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Program.cs",
+              "RelativeDocumentMoniker": "Service\\Program.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Program.cs",
+              "RelativeToolTip": "Service\\Program.cs",
+              "ViewState": "AgIAADwAAAAAAAAAAAAAAE0AAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:36:33.13Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "IUserService.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\IUserService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\IUserService.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\IUserService.cs",
+              "RelativeToolTip": "Service\\Services\\IUserService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwAsAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:36:02.21Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Service\\Controllers\\UserController.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Service\\Controllers\\UserController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAqwA4AAAA3AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:33:20.404Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "LoginRequest.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\LoginRequest.cs",
+              "RelativeDocumentMoniker": "Service\\Models\\LoginRequest.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Models\\LoginRequest.cs",
+              "RelativeToolTip": "Service\\Models\\LoginRequest.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:32:27.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Service\\Controllers\\AuthController.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Service\\Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAqwBIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T18:31:42.609Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "UserService.cs",
+              "DocumentMoniker": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\UserService.cs",
+              "RelativeDocumentMoniker": "Service\\Services\\UserService.cs",
+              "ToolTip": "D:\\Projects\\SistemaLinkMetrikErp\\Service\\Services\\UserService.cs",
+              "RelativeToolTip": "Service\\Services\\UserService.cs",
+              "ViewState": "AgIAAE8AAAAAAAAAAAAUwA4AAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-03-04T16:25:48.34Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

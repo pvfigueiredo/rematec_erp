@@ -1,0 +1,15 @@
+.notification-icon{
+  & unread {
+    background-color: #10b981;
+  }
+
+  & read {
+    background-color: #f43f5e;
+  }
+}
+
+.notification-icon{
+  &unread {
+    background-color: #4a6cf7;
+  }
+}

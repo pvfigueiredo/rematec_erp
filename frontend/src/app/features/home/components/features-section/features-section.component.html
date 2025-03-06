@@ -1,0 +1,11 @@
+<section class="features">
+  <h2 class="section-title">Recursos Principais</h2>
+  <div class="features-grid">
+    <app-feature-card
+      *ngFor="let feature of features"
+      [title]="feature.title"
+      [description]="feature.description"
+      [iconPath]="feature.iconPath">
+    </app-feature-card>
+  </div>
+</section>

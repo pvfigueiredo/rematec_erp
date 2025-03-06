@@ -1,0 +1,46 @@
+<div class="login-form">
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <div class="form-group">
+      <label for="email">E-mail</label>
+      <input
+        type="email"
+        id="email"
+        formControlName="email"
+        class="form-control"
+        [ngClass]="{'is-invalid': loginForm.get('email')?.invalid && loginForm.get('email')?.touched}"
+      >
+      <div class="error-message" *ngIf="loginForm.get('email')?.invalid && loginForm.get('email')?.touched">
+        <span *ngIf="loginForm.get('email')?.errors?.['required']">E-mail é obrigatório</span>
+        <span *ngIf="loginForm.get('email')?.errors?.['email']">E-mail inválido</span>
+      </div>
+    </div>
+
+    <div class="form-group">
+      <label for="password">Senha</label>
+      <input
+        type="password"
+        id="password"
+        formControlName="password"
+        class="form-control"
+        [ngClass]="{'is-invalid': loginForm.get('password')?.invalid && loginForm.get('password')?.touched}"
+      >
+      <div class="error-message" *ngIf="loginForm.get('password')?.invalid && loginForm.get('password')?.touched">
+        Senha é obrigatória
+      </div>
+    </div>
+
+    <div class="form-options">
+      <div class="remember-me">
+        <input type="checkbox" id="remember">
+        <label for="remember">Lembrar-me</label>
+      </div>
+      <a href="javascript:void(0)" class="forgot-password">Esqueci minha senha</a>
+    </div>
+
+    <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Entrar</button>
+
+    <div class="form-footer">
+      <p>Não tem uma conta? <a href="javascript:void(0)" (click)="switchToSignup()">Cadastre-se</a></p>
+    </div>
+  </form>
+</div>

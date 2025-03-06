@@ -1,0 +1,44 @@
+@use '../../../../../styles/variables';
+
+.footer {
+  background-color: variables.$secondary-color;
+  color: variables.$text-light;
+  padding: 2rem 0;
+
+  &-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    text-align: center;
+  }
+
+  &-logo {
+    color: variables.$primary-color;
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &-links {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin: 1.5rem 0;
+
+    a {
+      color: variables.$text-light;
+      text-decoration: none;
+      transition: color 0.3s ease;
+
+      &:hover {
+        color: variables.$primary-color;
+      }
+    }
+  }
+
+  .copyright {
+    color: #ffffff;
+    font-size: 0.9rem;
+  }
+}

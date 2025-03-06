@@ -1,0 +1,17 @@
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.csproj.AssemblyReference.cache
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.AssemblyInfoInputs.cache
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.AssemblyInfo.cs
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.csproj.CoreCompileInputs.cache
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Repository.deps.json
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Repository.dll
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Repository.pdb
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Application.dll
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Domain.dll
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Application.pdb
+D:\Projects\SistemaLinkMetrikErp\src\Repository\bin\Debug\net8.0\Domain.pdb
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.csproj.Up2Date
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.dll
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\refint\Repository.dll
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\Repository.pdb
+D:\Projects\SistemaLinkMetrikErp\src\Repository\obj\Debug\net8.0\ref\Repository.dll
