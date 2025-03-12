@@ -5,7 +5,7 @@ import { Component } from '@angular/core';
   template: `<svg version="1.1" id="Camada_1" [attr.width]="140" [attr.height]="40" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
   viewBox="0 0 276 95" style="enable-background:new 0 0 276 95;" xml:space="preserve">
 <style type="text/css">
- .st0{fill:#1a3668;}
+ .st0{fill:#ffffff;}
 </style>
 <g>
  <path class="st0" d="M247.8,31.2l-0.5,7c-2.3-1-4.6-1.4-7-1.4c-3.8,0-6.4,0.9-8,2.8c-1.5,1.8-2.3,5-2.3,9.4c0,4.5,0.8,7.7,2.5,9.7

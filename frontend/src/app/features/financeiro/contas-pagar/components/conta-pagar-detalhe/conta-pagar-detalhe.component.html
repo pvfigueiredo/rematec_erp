@@ -1,0 +1,90 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2>Detalhes da Conta</h2>
+      <button class="btn-close" (click)="fechar()">×</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="detalhe-conta">
+        <h3>{{ conta?.descricao }}</h3>
+
+        <div class="status-badge-large" [ngClass]="conta?.status">
+          {{ conta?.status === 'pendente' ? 'Pendente' :
+             conta?.status === 'pago' ? 'Pago' :
+             conta?.status === 'atrasado' ? 'Atrasado' : 'Cancelado' }}
+        </div>
+
+        <div class="info-section">
+          <div class="info-item">
+            <span class="label">Fornecedor:</span>
+            <span class="value">{{ conta?.fornecedor }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Categoria:</span>
+            <span class="value">{{ conta?.categoria }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Valor Total:</span>
+            <span class="value">{{ conta?.valorTotal | currency: 'BRL' }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Data de Vencimento:</span>
+            <span class="value">{{ conta?.dataVencimento | date: 'dd/MM/yyyy' }}</span>
+          </div>
+          <div class="info-item" *ngIf="conta != null && conta != undefined && conta?.parcelas && conta.parcelas > 1">
+            <span class="label">Parcelas:</span>
+            <span class="value">{{ conta.parcelas }}</span>
+          </div>
+        </div>
+
+        <div class="info-section" *ngIf="conta?.dataPagamento">
+          <h4>Informações de Pagamento</h4>
+          <div class="info-item">
+            <span class="label">Data de Pagamento:</span>
+            <span class="value">{{ conta?.dataPagamento | date: 'dd/MM/yyyy' }}</span>
+          </div>
+          <div class="info-item" *ngIf="conta?.formaPagamento">
+            <span class="label">Forma de Pagamento:</span>
+            <span class="value">{{ conta?.formaPagamento }}</span>
+          </div>
+          <div class="info-item" *ngIf="conta?.comprovante">
+            <span class="label">Comprovante:</span>
+            <button class="btn btn-sm btn-link" (click)="baixarComprovante()">
+              <i class="fas fa-download"></i> Baixar comprovante
+            </button>
+          </div>
+        </div>
+
+        <div class="info-section" *ngIf="conta?.observacoes">
+          <h4>Observações</h4>
+          <p>{{ conta?.observacoes }}</p>
+        </div>
+
+        <div class="info-section">
+          <h4>Histórico</h4>
+          <div class="info-item">
+            <span class="label">Criado por:</span>
+            <span class="value">{{ conta?.usuarioCriacao }}</span>
+          </div>
+          <div class="info-item">
+            <span class="label">Data de Criação:</span>
+            <span class="value">{{ conta?.dataCriacao | date: 'dd/MM/yyyy HH:mm' }}</span>
+          </div>
+          <div class="info-item" *ngIf="conta?.usuarioAtualizacao">
+            <span class="label">Última Atualização por:</span>
+            <span class="value">{{ conta?.usuarioAtualizacao }}</span>
+          </div>
+          <div class="info-item" *ngIf="conta?.dataAtualizacao">
+            <span class="label">Data da Última Atualização:</span>
+            <span class="value">{{ conta?.dataAtualizacao | date: 'dd/MM/yyyy HH:mm' }}</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button class="btn btn-secondary" (click)="fechar()">Fechar</button>
+      </div>
+    </div>
+  </div>
+</div>

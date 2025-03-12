@@ -1,0 +1,231 @@
+<div class="dashboard-page">
+  <div class="page-header">
+    <h1>Dashboard</h1>
+    <div class="header-actions">
+      <div class="date-picker">
+        <button class="date-btn">
+          <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          <span>Mar 1, 2025 - Mar 6, 2025</span>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+        </button>
+      </div>
+      <button class="btn btn-primary">
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <rect x="3" y="3" width="18" height="18" rx="2" ry="2"></rect>
+          <line x1="8" y1="12" x2="16" y2="12"></line>
+          <line x1="12" y1="16" x2="12" y2="8"></line>
+        </svg>
+        Gerar Relatório
+      </button>
+    </div>
+  </div>
+
+  <div class="metrics-grid">
+    <div *ngFor="let metric of metricsData" class="metric-card">
+      <div class="metric-icon"
+         [ngClass]="{'bg-success': metric.trend === 'up', 'bg-danger': metric.trend === 'down'}">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" [innerHTML]="metric.icon"></svg>
+      </div>
+      <div class="metric-info">
+        <h3 class="metric-title">{{ metric.title }}</h3>
+        <p class="metric-value">{{ metric.value }}</p>
+        <div class="metric-trend" [class.up]="metric.trend === 'up'" [class.down]="metric.trend === 'down'">
+          <svg *ngIf="metric.trend === 'up'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="18 15 12 9 6 15"></polyline>
+          </svg>
+          <svg *ngIf="metric.trend === 'down'" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="6 9 12 15 18 9"></polyline>
+          </svg>
+          <span>{{ metric.percentage }}%</span>
+          <span class="period">vs. último mês</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-charts">
+    <div class="chart-container sales-chart">
+      <div class="chart-header">
+        <h2>Vendas por Período</h2>
+        <div class="chart-actions">
+          <button class="btn btn-sm btn-outline active">Diário</button>
+          <button class="btn btn-sm btn-outline">Semanal</button>
+          <button class="btn btn-sm btn-outline">Mensal</button>
+        </div>
+      </div>
+      <div class="chart-placeholder">
+        <!-- Chart placeholder - in a real app, this would be a chart component -->
+        <div class="placeholder-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="20" x2="18" y2="10"></line>
+            <line x1="12" y1="20" x2="12" y2="4"></line>
+            <line x1="6" y1="20" x2="6" y2="14"></line>
+          </svg>
+          <p>Gráfico de Vendas por Período</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="chart-container products-chart">
+      <div class="chart-header">
+        <h2>Produtos Mais Vendidos</h2>
+        <button class="btn btn-sm btn-text">
+          Ver Todos
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="chart-placeholder">
+        <!-- Chart placeholder - in a real app, this would be a chart component -->
+        <div class="placeholder-content">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="8 14 12 10 16 14"></polyline>
+            <line x1="12" y1="18" x2="12" y2="10"></line>
+          </svg>
+          <p>Gráfico de Produtos Mais Vendidos</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dashboard-tables">
+    <div class="table-container recent-sales">
+      <div class="table-header">
+        <h2>Vendas Recentes</h2>
+        <button class="btn btn-sm btn-text">
+          Ver Todas
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>ID</th>
+              <th>Cliente</th>
+              <th>Produtos</th>
+              <th>Valor</th>
+              <th>Status</th>
+              <th>Data</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>#VD0253</td>
+              <td>João Silva</td>
+              <td>3 itens</td>
+              <td>R$ 1.250,00</td>
+              <td><span class="badge success">Pago</span></td>
+              <td>06/03/2025</td>
+            </tr>
+            <tr>
+              <td>#VD0252</td>
+              <td>Maria Oliveira</td>
+              <td>1 item</td>
+              <td>R$ 450,00</td>
+              <td><span class="badge warning">Pendente</span></td>
+              <td>05/03/2025</td>
+            </tr>
+            <tr>
+              <td>#VD0251</td>
+              <td>Pedro Santos</td>
+              <td>5 itens</td>
+              <td>R$ 2.180,50</td>
+              <td><span class="badge success">Pago</span></td>
+              <td>05/03/2025</td>
+            </tr>
+            <tr>
+              <td>#VD0250</td>
+              <td>Ana Costa</td>
+              <td>2 itens</td>
+              <td>R$ 890,00</td>
+              <td><span class="badge danger">Cancelado</span></td>
+              <td>04/03/2025</td>
+            </tr>
+            <tr>
+              <td>#VD0249</td>
+              <td>Lucas Ferreira</td>
+              <td>4 itens</td>
+              <td>R$ 1.670,25</td>
+              <td><span class="badge success">Pago</span></td>
+              <td>04/03/2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="table-container low-stock">
+      <div class="table-header">
+        <h2>Estoque Baixo</h2>
+        <button class="btn btn-sm btn-text">
+          Ver Todos
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+      </div>
+      <div class="table-responsive">
+        <table class="data-table">
+          <thead>
+            <tr>
+              <th>Produto</th>
+              <th>Código</th>
+              <th>Estoque Atual</th>
+              <th>Estoque Mínimo</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Notebook Dell XPS</td>
+              <td>PRD0123</td>
+              <td>3</td>
+              <td>5</td>
+              <td><span class="badge warning">Baixo</span></td>
+            </tr>
+            <tr>
+              <td>Monitor LG 27"</td>
+              <td>PRD0456</td>
+              <td>2</td>
+              <td>8</td>
+              <td><span class="badge danger">Crítico</span></td>
+            </tr>
+            <tr>
+              <td>Teclado Mecânico</td>
+              <td>PRD0789</td>
+              <td>4</td>
+              <td>5</td>
+              <td><span class="badge warning">Baixo</span></td>
+            </tr>
+            <tr>
+              <td>HD Externo 1TB</td>
+              <td>PRD0321</td>
+              <td>1</td>
+              <td>6</td>
+              <td><span class="badge danger">Crítico</span></td>
+            </tr>
+            <tr>
+              <td>Smartphone Samsung</td>
+              <td>PRD0654</td>
+              <td>6</td>
+              <td>10</td>
+              <td><span class="badge warning">Baixo</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

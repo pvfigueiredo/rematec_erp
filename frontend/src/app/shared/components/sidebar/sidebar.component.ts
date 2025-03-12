@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SidebarService } from '@core/services/sidebar.service';
 
-interface MenuItem {
+export interface MenuItem {
   label: string;
   icon?: string;
   route?: string;
@@ -148,7 +148,9 @@ export class SidebarComponent implements OnInit {
 
   constructor(public sidebarService: SidebarService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+
+  }
 
   toggleSubmenu(menuItem: MenuItem): void {
     if (!this.sidebarService.collapsed) {

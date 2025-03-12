@@ -1,0 +1,73 @@
+<div class="modal-overlay">
+  <div class="modal-container">
+    <div class="modal-header">
+      <h2>Efetuar Pagamento</h2>
+      <button class="btn-close" (click)="fechar()">×</button>
+    </div>
+
+    <div class="modal-body">
+      <div class="info-conta">
+        <h3>{{ conta?.descricao }}</h3>
+        <div class="info-item">
+          <span class="label">Fornecedor:</span>
+          <span class="value">{{ conta?.fornecedor }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Vencimento:</span>
+          <span class="value">{{ conta?.dataVencimento | date: 'dd/MM/yyyy' }}</span>
+        </div>
+        <div class="info-item">
+          <span class="label">Valor:</span>
+          <span class="value">{{ conta?.valorTotal | currency: 'BRL' }}</span>
+        </div>
+      </div>
+
+      <form [formGroup]="pagamentoForm" (ngSubmit)="onSubmit()">
+        <div class="form-row">
+          <div class="form-group col-md-6">
+            <label for="dataPagamento">Data de Pagamento *</label>
+            <input type="date" id="dataPagamento" formControlName="dataPagamento" class="form-control"
+                [ngClass]="{'is-invalid': pagamentoForm.get('dataPagamento')?.invalid && pagamentoForm.get('dataPagamento')?.touched}">
+            <div class="invalid-feedback" *ngIf="pagamentoForm.get('dataPagamento')?.errors?.['required']">
+              Data de pagamento é obrigatória
+            </div>
+          </div>
+
+          <div class="form-group col-md-6">
+            <label for="formaPagamento">Forma de Pagamento *</label>
+            <select id="formaPagamento" formControlName="formaPagamento" class="form-control"
+                [ngClass]="{'is-invalid': pagamentoForm.get('formaPagamento')?.invalid && pagamentoForm.get('formaPagamento')?.touched}">
+              <option value="">Selecione...</option>
+              <option *ngFor="let forma of formasPagamento" [value]="forma">{{ forma }}</option>
+            </select>
+            <div class="invalid-feedback" *ngIf="pagamentoForm.get('formaPagamento')?.errors?.['required']">
+              Forma de pagamento é obrigatória
+            </div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="comprovante">Comprovante de Pagamento</label>
+          <div class="custom-file">
+            <input type="file" id="comprovante" (change)="onFileSelected($event)" class="custom-file-input">
+            <label class="custom-file-label" for="comprovante">
+              {{ arquivoComprovante ? arquivoComprovante.name : 'Escolher arquivo' }}
+            </label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="observacao">Observação</label>
+          <textarea id="observacao" formControlName="observacao" rows="3" class="form-control"></textarea>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" (click)="fechar()">Cancelar</button>
+          <button type="submit" class="btn btn-primary" [disabled]="pagamentoForm.invalid">
+            Confirmar Pagamento
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

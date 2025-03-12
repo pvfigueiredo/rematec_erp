@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { AuthService } from '@core/services/auth.service';
 import { Router } from '@angular/router';
 import { SidebarService } from '@core/services/sidebar.service';
-import { User } from '@core/models/user.model';
+
 
 @Component({
   selector: 'app-dashboard-header',
@@ -27,7 +27,6 @@ export class DashboardHeaderComponent implements OnInit {
     this.authService.currentUser$.subscribe(user => {
       if (user) {
         this.userName = user.name;
-        // Get initials from name
         this.userInitials = user.name??''
           .split(' ')
           .map(name => name[0])

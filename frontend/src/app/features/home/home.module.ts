@@ -1,12 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-//import { RouterModule } from '@angular/router';
 
 import { SharedModule } from '../../shared/shared.module';
 import { HomeComponent } from './home.component';
 import { HeroComponent } from './components/hero/hero.component';
 import { FeaturesSectionComponent } from './components/features-section/features-section.component';
 import { FeatureCardComponent } from './components/feature-card/feature-card.component';
+import { RouterModule } from '@angular/router';
+import { routes } from 'src/app/app-routing.module';
 
 @NgModule({
   declarations: [
@@ -17,8 +18,8 @@ import { FeatureCardComponent } from './components/feature-card/feature-card.com
   ],
   imports: [
     CommonModule,
-  //  RouterModule,
-    SharedModule
+    SharedModule,
+    RouterModule.forChild(routes)
   ],
   exports: [
     HomeComponent,

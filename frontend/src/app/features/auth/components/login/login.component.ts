@@ -42,7 +42,7 @@ export class LoginComponent implements OnInit {
         this.isSubmitting = false;
         this.authService.closeLoginModal();
         console.log(user);
-        this.router.navigate(['/main']);
+        this.router.navigate(['/dashboard']);
       },
       error: (error) => {
         this.isSubmitting = false;

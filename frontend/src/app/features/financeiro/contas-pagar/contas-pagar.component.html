@@ -1,0 +1,112 @@
+<div class="contas-pagar-container">
+  <div class="page-header">
+    <h1>Contas a Pagar</h1>
+    <div class="actions">
+      <button class="btn btn-primary" (click)="abrirModalCadastro()">
+        <i class="fas fa-plus"></i> Nova Conta
+      </button>
+      <button class="btn btn-outline" (click)="gerarRelatorio()">
+        <i class="fas fa-file-pdf"></i> Gerar Relatório
+      </button>
+    </div>
+  </div>
+
+  <div class="filter-section">
+    <form [formGroup]="filtroForm">
+      <div class="form-row">
+        <div class="form-group">
+          <label for="dataInicio">Data Inicial</label>
+          <input type="date" id="dataInicio" formControlName="dataInicio" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="dataFim">Data Final</label>
+          <input type="date" id="dataFim" formControlName="dataFim" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="status">Status</label>
+          <select id="status" formControlName="status" class="form-control">
+            <option value="">Todos</option>
+            <option *ngFor="let status of statusOpcoes" [value]="status.valor">
+              {{ status.rotulo }}
+            </option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="fornecedor">Fornecedor</label>
+          <input type="text" id="fornecedor" formControlName="fornecedor" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="categoria">Categoria</label>
+          <input type="text" id="categoria" formControlName="categoria" class="form-control">
+        </div>
+      </div>
+    </form>
+  </div>
+
+  <div class="content-section">
+    <div class="table-container">
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Descrição</th>
+            <th>Fornecedor</th>
+            <th>Vencimento</th>
+            <th>Valor</th>
+            <th>Status</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let conta of contas$ | async" [ngClass]="{'atrasado': conta.status === 'atrasado'}">
+            <td>{{ conta.descricao }}</td>
+            <td>{{ conta.fornecedor }}</td>
+            <td>{{ conta.dataVencimento | date: 'dd/MM/yyyy' }}</td>
+            <td class="valor">{{ conta.valorTotal | currency: 'BRL' }}</td>
+            <td>
+              <span class="status-badge" [ngClass]="conta.status">
+                {{ getStatusRotulo(conta.status) }}
+              </span>
+            </td>
+            <td class="acoes">
+              <button class="btn-icon" title="Ver Detalhes" (click)="abrirModalDetalhe(conta)">
+                <i class="fas fa-eye"></i>
+              </button>
+              <button class="btn-icon" title="Editar" *ngIf="conta.status !== 'pago'" (click)="abrirModalEdicao(conta)">
+                <i class="fas fa-edit"></i>
+              </button>
+              <button class="btn-icon btn-success" title="Pagar" *ngIf="conta.status === 'pendente' || conta.status === 'atrasado'" (click)="abrirModalPagamento(conta)">
+                <i class="fas fa-money-bill"></i>
+              </button>
+              <button class="btn-icon btn-danger" title="Excluir" *ngIf="conta.status !== 'pago'" (click)="excluirConta(conta)">
+                <i class="fas fa-trash"></i>
+              </button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
+
+<!-- Modal de Cadastro/Edição -->
+<app-conta-pagar-form
+  *ngIf="modalCadastroAberto"
+  [conta]="contaSelecionada"
+  (fecharModal)="fecharModalCadastro()"
+  (salvarConta)="filtroForm.updateValueAndValidity()">
+</app-conta-pagar-form>
+
+<!-- Modal de Detalhes -->
+<app-conta-pagar-detalhe
+  *ngIf="modalDetalheAberto"
+  [conta]="contaSelecionada"
+  (fecharModal)="fecharModalDetalhe()">
+</app-conta-pagar-detalhe>
+
+<!-- Modal de Pagamento -->
+<app-conta-pagar-pagamento
+  *ngIf="modalPagamentoAberto"
+  [conta]="contaSelecionada"
+  (fecharModal)="fecharModalPagamento()"
+  (confirmarPagamento)="efetuarPagamento($event)">
+</app-conta-pagar-pagamento>

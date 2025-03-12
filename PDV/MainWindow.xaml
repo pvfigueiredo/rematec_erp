@@ -1,0 +1,388 @@
+﻿<!-- MainWindow.xaml -->
+<Window x:Class="PDV.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PDV"
+        mc:Ignorable="d"
+        Title="Sistema PDV" Height="768" Width="1024" WindowState="Maximized">
+
+    <Window.Resources>
+        <!-- Cores definidas -->
+        <SolidColorBrush x:Key="CorPrimaria" Color="#1a3668"/>
+        <SolidColorBrush x:Key="CorSecundaria" Color="#ff6b1c"/>
+
+        <!-- Estilo para botões grandes touchscreen -->
+        <Style x:Key="BotaoTouch" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource CorPrimaria}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinHeight" Value="60"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5" 
+                                BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#2a4678"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#0a2658"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Estilo para botões de ação -->
+        <Style x:Key="BotaoAcao" TargetType="Button">
+            <Setter Property="Background" Value="{StaticResource CorSecundaria}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="18"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="15"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="MinHeight" Value="60"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}" 
+                                CornerRadius="5" 
+                                BorderThickness="0">
+                            <ContentPresenter HorizontalAlignment="Center" 
+                                              VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#ff7b2c"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#ef5b0c"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Estilo para itens do ListView -->
+        <Style x:Key="ItemCarrinho" TargetType="ListViewItem">
+            <Setter Property="Height" Value="50"/>
+            <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+        </Grid.RowDefinitions>
+
+        <!-- Cabeçalho -->
+        <Grid Grid.Row="0" Background="{StaticResource CorPrimaria}">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <StackPanel Grid.Column="0" Orientation="Horizontal" VerticalAlignment="Center" Margin="20,0,0,0">
+                <TextBlock Text="Rematec PDV" Foreground="White" FontSize="28" FontWeight="Bold"/>
+                <TextBlock Text=" | Caixa 01" Foreground="White" FontSize="22" Margin="10,0,0,0"/>
+            </StackPanel>
+
+            <StackPanel Grid.Column="1" Orientation="Horizontal" VerticalAlignment="Center" Margin="0,0,20,0">
+                <TextBlock Text="Operador: " Foreground="White" FontSize="18"/>
+                <TextBlock Text="João Silva" Foreground="White" FontSize="18" FontWeight="Bold"/>
+                <TextBlock Text=" | " Foreground="White" FontSize="18" Margin="10,0"/>
+                <TextBlock Name="txtDataHora" Text="{Binding Path=DataHora}" Foreground="White" FontSize="18"/>
+            </StackPanel>
+        </Grid>
+
+        <!-- Conteúdo Principal -->
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="350"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Painel Esquerdo - Produtos e Categorias -->
+            <Grid Grid.Column="0" Margin="10">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <!-- Barra de Pesquisa -->
+                <Grid Grid.Row="0">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+
+                    <TextBox x:Name="TxtPesquisa" 
+                             Grid.Column="0" 
+                             Height="50" 
+                             FontSize="20" 
+                             Padding="10,5" 
+                             Margin="0,0,5,0"
+                             Text="Pesquisar produto (F4)"
+                             GotFocus="TxtPesquisa_GotFocus"
+                             KeyDown="TxtPesquisa_KeyDown"
+                             LostFocus="TxtPesquisa_LostFocus"/>
+
+                    <Button Grid.Column="1"
+                            x:Name="BtnPesquisa"
+                            Content="Buscar" 
+                            Width="120"
+                            Style="{StaticResource BotaoTouch}"
+                            Click="Button_Click"/>
+                </Grid>
+
+                <!-- Categorias -->
+                <ScrollViewer Grid.Row="1" 
+                              HorizontalScrollBarVisibility="Auto" 
+                              VerticalScrollBarVisibility="Disabled"
+                              Margin="0,10">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Content="Todos" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Alimentos" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Bebidas" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Limpeza" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Padaria" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Açougue" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Hortifruti" Style="{StaticResource BotaoTouch}" Width="120"/>
+                        <Button Content="Mais" Style="{StaticResource BotaoTouch}" Width="120"/>
+                    </StackPanel>
+                </ScrollViewer>
+
+                <!-- Grid de Produtos -->
+                <ScrollViewer Grid.Row="2" VerticalScrollBarVisibility="Auto">
+                    <WrapPanel>
+                        <!-- Produto 1 -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Água Mineral" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="500ml" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 2,50" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Produto 2 -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Refrigerante" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="2L" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 7,90" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Produto 3 -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Pão Francês" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="Unidade" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 0,75" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Produto 4 -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Arroz" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="5kg" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 22,90" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Produto 5 -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Feijão" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="1kg" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 8,50" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Produto 6 -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Café" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="500g" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 15,75" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <!-- Mais produtos... -->
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Leite" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="1L" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 5,49" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+
+                        <Button Width="150" Height="150" Margin="5" Background="White" BorderBrush="{StaticResource CorPrimaria}" BorderThickness="1">
+                            <StackPanel>
+                                <TextBlock Text="Açúcar" FontWeight="Bold" TextAlignment="Center"/>
+                                <TextBlock Text="1kg" TextAlignment="Center" Margin="0,5"/>
+                                <TextBlock Text="R$ 4,29" Foreground="{StaticResource CorSecundaria}" FontSize="18" FontWeight="Bold" TextAlignment="Center" Margin="0,10"/>
+                            </StackPanel>
+                        </Button>
+                    </WrapPanel>
+                </ScrollViewer>
+            </Grid>
+
+            <!-- Painel Direito - Carrinho e Pagamento -->
+            <Grid Grid.Column="1" Background="#F5F5F5">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+
+                <!-- Cabeçalho do Carrinho -->
+                <Border Grid.Row="0" Background="{StaticResource CorPrimaria}" Padding="10">
+                    <TextBlock Text="ITENS DO PEDIDO" Foreground="White" FontSize="18" FontWeight="Bold" HorizontalAlignment="Center"/>
+                </Border>
+
+                <!-- Lista de Itens -->
+                <ListView x:Name="ListItens"
+                          Grid.Row="1" 
+                          BorderThickness="0"
+                          Background="Transparent"
+                          Margin="10"
+                          ItemContainerStyle="{StaticResource ItemCarrinho}"
+                          ItemsSource="{Binding Path=Produtos}">
+                    <ListView.View>
+                        <GridView>
+                            <GridViewColumn Header="Qtd" DisplayMemberBinding="{Binding Path=Quantidade}" Width="40"/>
+                            <GridViewColumn Header="Produto" DisplayMemberBinding="{Binding Path=Descricao}" Width="170"/>
+                            <GridViewColumn Header="Preço" DisplayMemberBinding="{Binding Path=Preco}" Width="70"/>
+                        </GridView>
+                    </ListView.View>
+                </ListView>
+
+                <!-- Resumo e Total -->
+                <Grid Grid.Row="2" Background="White" Margin="0,0,0,10">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                    <Border Grid.Row="0" BorderBrush="#DDDDDD" BorderThickness="0,1,0,0" Padding="10,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Subtotal:" FontSize="16"/>
+                            <TextBlock Grid.Column="1" Text="R$ 13,65" FontSize="16" FontWeight="SemiBold"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="1" BorderBrush="#DDDDDD" BorderThickness="0,1,0,1" Padding="10,5">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="Desconto:" FontSize="16"/>
+                            <TextBlock Grid.Column="1" Text="R$ 0,00" FontSize="16" FontWeight="SemiBold"/>
+                        </Grid>
+                    </Border>
+
+                    <Border Grid.Row="2" BorderBrush="#DDDDDD" BorderThickness="0,0,0,1" Background="#F9F9F9" Padding="10,8">
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                                <ColumnDefinition Width="Auto"/>
+                            </Grid.ColumnDefinitions>
+                            <TextBlock Grid.Column="0" Text="TOTAL:" FontSize="20" FontWeight="Bold"/>
+                            <TextBlock Grid.Column="1" Text="R$ 13,65" FontSize="20" FontWeight="Bold" Foreground="{StaticResource CorSecundaria}"/>
+                        </Grid>
+                    </Border>
+                </Grid>
+            </Grid>
+        </Grid>
+
+        <!-- Barra Inferior - Atalhos e Ações -->
+        <Grid Grid.Row="2" Background="#F0F0F0">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <!-- Atalhos de Teclado -->
+            <StackPanel Grid.Column="0" Orientation="Horizontal" Margin="20,0">
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="F1" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button x:Name="BtnAjuda"
+                            Content="Ajuda" 
+                            Width="80" Height="60" 
+                            Style="{StaticResource BotaoTouch}" 
+                            Click="Button_Click"/>
+                </StackPanel>
+
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="F2" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button x:Name="BtnExcluir" 
+                            Content="Excluir Item" 
+                            Width="100" Height="60" 
+                            Style="{StaticResource BotaoTouch}"
+                            Click="Button_Click"/>
+                </StackPanel>
+
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="F3" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button x:Name="BtnDesconto" 
+                            Content="Desconto" 
+                            Width="100" Height="60" 
+                            Style="{StaticResource BotaoTouch}"
+                            Click="Button_Click"/>
+                </StackPanel>
+
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="F5" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button x:Name="BtnCliente" 
+                            Content="Cliente" 
+                            Width="80" Height="60" 
+                            Style="{StaticResource BotaoTouch}"
+                            Click="Button_Click"/>
+                </StackPanel>
+
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="F6" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button x:Name="BtnCancelar" 
+                            Content="Cancelar" 
+                            Width="100" Height="60" 
+                            Style="{StaticResource BotaoTouch}"
+                            Click="Button_Click"/>
+                </StackPanel>
+            </StackPanel>
+
+            <!-- Botão de Finalizar -->
+            <StackPanel Grid.Column="1" Orientation="Horizontal" Margin="0,0,20,0">
+                <StackPanel Margin="10,0">
+                    <TextBlock Text="F10" FontWeight="Bold" HorizontalAlignment="Center"/>
+                    <Button x:Name="BtnFinalizar" 
+                            Content="FINALIZAR VENDA" 
+                            Width="180" Height="60" 
+                            Style="{StaticResource BotaoAcao}"
+                            Click="Button_Click"/>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

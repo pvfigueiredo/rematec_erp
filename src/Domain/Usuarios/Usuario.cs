@@ -1,5 +1,4 @@
-﻿using Domain.Empresas;
-using Domain.Entities;
+﻿using Domain.Entities;
 
 namespace Domain.Usuarios;
 

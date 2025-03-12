@@ -6,6 +6,8 @@ import { FooterComponent } from './components/footer/footer.component';
 import { ModalComponent } from './components/modal/modal.component';
 import { LogoComponent } from './components/logo/logo.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { DashboardHeaderComponent } from './components/dashboard-header/dashboard-header.component';
+import { CommonModule } from '@angular/common';
 
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
@@ -20,6 +22,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatMenuModule } from '@angular/material/menu';
 
 import { BaseChartDirective } from 'ng2-charts';
+import { FinanceiroModule } from '@features/financeiro/financeiro.module';
 
 @NgModule({
   declarations: [
@@ -27,10 +30,12 @@ import { BaseChartDirective } from 'ng2-charts';
     FooterComponent,
     ModalComponent,
     LogoComponent,
-    SidebarComponent
+    SidebarComponent,
+    DashboardHeaderComponent
   ],
   imports: [
     RouterModule,
+    FinanceiroModule,
 
     MatIconModule,
     MatButtonModule,
@@ -45,7 +50,8 @@ import { BaseChartDirective } from 'ng2-charts';
     MatMenuModule,
 
     // NgCharts
-    BaseChartDirective
+    BaseChartDirective,
+    CommonModule
   ],
   exports: [
     HeaderComponent,
@@ -53,6 +59,7 @@ import { BaseChartDirective } from 'ng2-charts';
     ModalComponent,
     LogoComponent,
     SidebarComponent,
+    DashboardHeaderComponent,
 
     MatIconModule,
     MatButtonModule,

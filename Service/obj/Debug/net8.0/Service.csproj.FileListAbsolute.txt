@@ -92,3 +92,4 @@ D:\Projects\SistemaLinkMetrikErp\Service\bin\Debug\net8.0\runtimes\win\lib\net6.
 D:\Projects\SistemaLinkMetrikErp\Service\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\Projects\SistemaLinkMetrikErp\Service\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
 D:\Projects\SistemaLinkMetrikErp\Service\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Windows.Extensions.dll
+D:\Projects\SistemaLinkMetrikErp\Service\obj\Debug\net8.0\Service.sourcelink.json

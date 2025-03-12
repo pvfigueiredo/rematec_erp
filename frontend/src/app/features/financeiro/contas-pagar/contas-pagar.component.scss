@@ -1,0 +1,156 @@
+@use '../../../../../styles/variables';
+
+.contas-pagar-container {
+  padding: 1.5rem;
+}
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+
+  h1 {
+    margin: 0;
+    font-size: 1.75rem;
+    color: #333;
+  }
+
+  .actions {
+    display: flex;
+    gap: 0.5rem;
+  }
+}
+
+.filter-section {
+  background-color: #f7f9fc;
+  border-radius: 0.5rem;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+
+  .form-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+    .form-group {
+      flex: 1 1 200px;
+
+      label {
+        display: block;
+        margin-bottom: 0.25rem;
+        font-size: 0.875rem;
+        font-weight: 500;
+      }
+    }
+  }
+}
+
+.content-section {
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+}
+
+.table-container {
+  overflow-x: auto;
+}
+
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 0.75rem 1rem;
+    text-align: left;
+    border-bottom: 1px solid #eaedf2;
+  }
+
+  th {
+    font-weight: 600;
+    color: #4a5568;
+    background-color: #f8fafc;
+  }
+
+  tr:hover {
+    background-color: #f8fafc;
+  }
+
+  tr.atrasado {
+    background-color: #fff5f5;
+
+    &:hover {
+      background-color: #fee2e2;
+    }
+  }
+
+  .valor {
+    text-align: right;
+    font-weight: 500;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: uppercase;
+
+    &.pendente {
+      background-color: #ebf5ff;
+      color: #3182ce;
+    }
+
+    &.pago {
+      background-color: #e6fffa;
+      color: #38b2ac;
+    }
+
+    &.atrasado {
+      background-color: #fff5f5;
+      color: #e53e3e;
+    }
+
+    &.cancelado {
+      background-color: #f7fafc;
+      color: #718096;
+    }
+  }
+
+  .acoes {
+    white-space: nowrap;
+    text-align: right;
+
+    .btn-icon {
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 0.25rem;
+      margin-left: 0.25rem;
+      border-radius: 0.25rem;
+      color: #718096;
+
+      &:hover {
+        background-color: #edf2f7;
+      }
+
+      &.btn-success {
+        color: #38a169;
+
+        &:hover {
+          background-color: #e6fffa;
+        }
+      }
+
+      &.btn-danger {
+        color: #e53e3e;
+
+        &:hover {
+          background-color: #fff5f5;
+        }
+      }
+    }
+  }
+}
